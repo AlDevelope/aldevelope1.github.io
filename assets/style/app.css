@@ -1,0 +1,45 @@
+body{
+    background-color : cyan
+}
+.wave-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1; /* Pastikan wave berada di belakang elemen lainnya */
+  }
+  
+  h2 {
+    position: relative; /* Pastikan teks berada di atas wave */
+    z-index: 1;
+  }
+
+  @keyframes slideInFromLeft {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInFromRight {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  .hover-animate-left:hover {
+    animation: slideInFromLeft 1s ease-out;
+  }
+  
+  .hover-animate-right:hover {
+    animation: slideInFromRight 1s ease-out;
+  }
